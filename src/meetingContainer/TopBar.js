@@ -11,6 +11,7 @@ import {
   Link,
   SwipeableDrawer,
   Grid,
+  Button,
 } from "@material-ui/core";
 import OutlineIconButton from "../components/OutlineIconButton";
 import { useMeeting } from "@videosdk.live/react-sdk";
@@ -1012,6 +1013,8 @@ const TopBar = ({ topBarHeight }) => {
 
   const theme = useTheme();
 
+  const meeting = useMeeting();
+
   const topBarButtonTypes = useMemo(
     () => ({
       END_CALL: "END_CALL",
@@ -1438,6 +1441,20 @@ const TopBar = ({ topBarHeight }) => {
       </Box>
 
       <Box className={classes.row} p={2}>
+        <Button
+          onClick={() => {
+            meeting.startHls();
+          }}
+        >
+          Start Hls
+        </Button>
+        <Button
+          onClick={() => {
+            meeting.stopHls();
+          }}
+        >
+          Stop Hls
+        </Button>
         {topBarIcons.map((row, i) => {
           return (
             <React.Fragment key={`topbar_controls_i_${i}`}>

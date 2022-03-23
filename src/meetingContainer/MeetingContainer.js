@@ -441,6 +441,14 @@ const MeetingContainer = () => {
     }
   };
 
+  const _handleOnHlsStarted = (data) => {
+    console.log("_handleOnHlsStarted", data);
+  };
+
+  const _handleOnHlsStopped = (data) => {
+    console.log("_handleOnHlsStopped", data);
+  };
+
   const _handleOnEntryRequested = () => {};
 
   const _handleOnEntryResponded = (participantId, decision) => {
@@ -522,6 +530,8 @@ const MeetingContainer = () => {
     onEntryResponded: _handleOnEntryResponded,
     onPinStateChanged: _handleOnPinStateChanged,
     onError: _handleOnError,
+    onHlsStarted: _handleOnHlsStarted,
+    onHlsStopped: _handleOnHlsStopped,
   });
 
   const _handleToggleFullScreen = () => {
