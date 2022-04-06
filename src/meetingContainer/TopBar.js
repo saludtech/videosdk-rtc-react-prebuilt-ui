@@ -1443,7 +1443,7 @@ const TopBar = ({ topBarHeight }) => {
       <Box className={classes.row} p={2}>
         <Button
           onClick={() => {
-            meeting.startHls();
+            meeting.startHls({ quality: "low" });
           }}
         >
           Start Hls

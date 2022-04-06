@@ -172,6 +172,8 @@ const MeetingContainer = () => {
 
   usePubSub(meetingLayoutTopic, {
     onMessageReceived: (data) => {
+      console.log(data.message.layout, "data onMessageReceived");
+
       setAppMeetingLayout(data.message.layout);
     },
     onOldMessagesReceived: (messages) => {
