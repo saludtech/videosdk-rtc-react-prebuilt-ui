@@ -15,6 +15,7 @@ import useCopyClipboard from "react-use-clipboard";
 import { Keyboard } from "@material-ui/icons";
 import { CopyIcon } from "../../icons";
 import useWindowSize from "../../utils/useWindowSize";
+import dictionary from "../../utils/dictionary";
 
 export default function MeetingDetailModal({
   internalPadding,
@@ -200,11 +201,7 @@ export default function MeetingDetailModal({
           fullWidth
           value={name}
           error={nameErr}
-          helperText={
-            nameErr
-              ? "Enter Minimum 3 Characters"
-              : "Your name will help everyone identify you in the meeting"
-          }
+          helperText={nameErr ? dictionary.nameError : dictionary.nameTip}
           onChange={(ev) => {
             setName(ev.target.value);
           }}
@@ -233,7 +230,7 @@ export default function MeetingDetailModal({
                   }}
                   id={"btnJoin"}
                 >
-                  Join
+                  {dictionary.join}
                 </Button>
               </InputAdornment>
             ),

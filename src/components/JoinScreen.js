@@ -17,6 +17,7 @@ import { CheckboxIcon } from "../icons";
 import SettingDialogueBox from "./joinScreen/SettingDialogueBox";
 import MeetingDetailModal from "./joinScreen/MeetingDetailModal";
 import useWindowSize from "../utils/useWindowSize";
+import dictionary from "../utils/dictionary";
 
 const useStyles = makeStyles((theme) => ({
   input: {
@@ -574,7 +575,7 @@ export default function JoinMeeting({
                                   variant="subtitle1"
                                   style={{ marginLeft: 4 }}
                                 >
-                                  Check your audio and video
+                                  {dictionary.checkYourAudio}
                                 </Typography>
                               </Box>
                             </Box>
@@ -622,7 +623,11 @@ export default function JoinMeeting({
                           {participantCanToggleSelfMic === "true" ? (
                             <Grid item>
                               <Tooltip
-                                title={micOn ? "Turn off mic" : "Turn on mic"}
+                                title={
+                                  micOn
+                                    ? dictionary.turnOffMic
+                                    : dictionary.turnOnMic
+                                }
                                 arrow
                                 placement="top"
                               >
@@ -650,8 +655,8 @@ export default function JoinMeeting({
                               <Tooltip
                                 title={
                                   webcamOn
-                                    ? "Turn off camera"
-                                    : "Turn on camera"
+                                    ? dictionary.turnOffCam
+                                    : dictionary.turnOnCam
                                 }
                                 arrow
                                 placement="top"

@@ -51,6 +51,7 @@ import ConfirmBox from "../components/ConfirmBox";
 import OutlineIconTextButton from "../components/OutlineIconTextButton";
 import MobileIconButton from "../components/MobileIconButton";
 import AddLiveStreamIcon from "../icons/AddLiveStreamIcon";
+import dictionary from "../utils/dictionary";
 
 const useStyles = makeStyles({
   row: { display: "flex", alignItems: "center" },
@@ -539,7 +540,7 @@ const MicBTN = () => {
     >
       <OutlineIconButton
         btnID={"btnMic"}
-        tooltipTitle={localMicOn ? "Turn off mic" : "Turn on mic"}
+        tooltipTitle={localMicOn ? dictionary.turnOffMic : dictionary.turnOnCam}
         isFocused={localMicOn}
         Icon={localMicOn ? MicIcon : MicOffIcon}
         onClick={toggleMic}
@@ -734,7 +735,9 @@ const WebcamBTN = () => {
     >
       <OutlineIconButton
         btnID={"btnWebcam"}
-        tooltipTitle={localWebcamOn ? "Turn off webcam" : "Turn on webcam"}
+        tooltipTitle={
+          localWebcamOn ? dictionary.turnOffCam : dictionary.turnOnCam
+        }
         isFocused={localWebcamOn}
         Icon={localWebcamOn ? VideocamIcon : VideocamOffIcon}
         onClick={toggleWebcam}
