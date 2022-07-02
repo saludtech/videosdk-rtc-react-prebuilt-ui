@@ -578,6 +578,7 @@ const App = () => {
             setJoinScreenMic(micOn);
             setJoinScreenWebCam(webcamOn);
             setUserHasInteracted(true);
+            console.log(window.location.origin);
           }}
           {...{
             micEnabled: paramKeys.micEnabled === "true",
